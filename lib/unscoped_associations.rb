@@ -3,11 +3,11 @@ require 'unscoped_associations/version'
 module UnscopedAssociations
   def self.included(base)
     base.extend ClassMethods
-    (class << base; self; end).instance_eval do
+    # (class << base; self; end).instance_eval do
       base.prepend :belongs_to, :unscoped
       base.prepend :has_many, :unscoped
       base.prepend :has_one, :unscoped
-    end
+    # end
   end
 
   module ClassMethods
